@@ -1,4 +1,4 @@
-package com.example.jwtauth.security.filter;
+package com.example.jwtauth.service.filter;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -17,7 +17,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-
+import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
@@ -30,11 +30,11 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 	@Override
 	public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 			throws AuthenticationException {
+		System.out.println("---------------request------"+request);
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UsernamePasswordAuthenticationToken token = new UsernamePasswordAuthenticationToken(username, password);
 		
-		System.out.println("---------------request---");
 		return authenticationManager.authenticate(token);
 	}	
 
@@ -59,5 +59,6 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
 		System.out.println("---------------refresh token------------"+refresh_token);
 		response.setHeader("access_token", access_token);
 		response.setHeader("refresh_token", refresh_token);
+		response.setContentType(APPLICATION_JSON_VALUE);
 	}
 }
