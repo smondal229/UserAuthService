@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "verificationToken.validity",
+    "type": "java.lang.String",
+    "description": "A description for 'verificationToken.validity'"
+  },
+  {
+    "name": "management.endpoint.web.exposure.includes",
+    "type": "java.lang.String",
+    "description": "A description for 'management.endpoint.web.exposure.includes'"
+  }
+]}
