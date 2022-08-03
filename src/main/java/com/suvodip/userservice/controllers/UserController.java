@@ -105,6 +105,8 @@ public class UserController {
         }
     }
     
+    
+    
     @ExceptionHandler(UserAlreadyExistException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody

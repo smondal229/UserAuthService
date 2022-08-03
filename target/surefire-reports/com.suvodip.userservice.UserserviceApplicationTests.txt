@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.suvodip.userservice.UserserviceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.9 s - in com.suvodip.userservice.UserserviceApplicationTests
